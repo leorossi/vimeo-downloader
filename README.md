@@ -23,7 +23,7 @@ $ npm test
 ## Usage
 
 ```
-import VideoDownloader from 'vimeo-downloader'
+import VideoDownloader from '@leorossi/vimeo-downloader'
 
 async function run() {
   const vd = new VideoDownloader({
