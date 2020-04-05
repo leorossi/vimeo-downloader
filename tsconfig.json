@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "dist",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "filesGlob": [
+    "lib/*.ts"
+  ],
+  "types": [
+    "node"
+  ]
+
+}

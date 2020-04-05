@@ -1,0 +1,23 @@
+{
+  "name": "vimeo-downloader",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Leonardo Rossi <leonardo.rossi@gmail.com>",
+  "license": " GNU GPLv3",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "lodash.get": "^4.4.2",
+    "progress": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.11.0",
+    "jest": "^25.2.7"
+  }
+}
