@@ -33,9 +33,12 @@ export default class VideoDownloader {
     }
   }
 
-  async download(videoUrl: string, targetFile: string, targetDirectory: string, force: boolean = false) {
-    const realVideoUrl = await this.getVideoData(videoUrl)
+  async download(videoUrl: string, targetFile: string, targetDirectory: string, force: boolean = false): Promise<void> {
     return new Promise(async (resolve, reject) => {
+      const realVideoUrl = await this.getVideoData(videoUrl)
+      if (!realVideoUrl) {
+        return reject(new Error(`Cannot find video data for url ${videoUrl}.`));
+      }
       axios({
         method: "get",
         url: realVideoUrl,
@@ -99,7 +102,6 @@ export default class VideoDownloader {
   private async getVideoData(videoUrl: string): Promise<string> {
     try {
       const response = await this.getPage(videoUrl);
-      console.log(response);
       const match = response.match(/var config = (\{(.*)\})\; if/);
       if (match) {
         const parsed = JSON.parse(match[1]);
